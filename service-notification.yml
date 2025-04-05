@@ -1,0 +1,39 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: ${service.name:service-notification}
+
+app:
+  name: ${service.name:service-notification}
+  env: local
+  debug: true
+  url: http://localhost:8084
+  key: base64:${random.value}
+
+log:
+  channel: stack
+  deprecations_channel: null
+  level: debug
+
+db:
+  connection: mysql
+  host: 127.0.0.1
+  port: 3306
+  database: notification_db
+  username: root
+  password: null
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    preferIpAddress: true
+
+config:
+  server:
+    url: http://localhost:8080

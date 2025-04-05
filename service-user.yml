@@ -1,0 +1,72 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: service-user
+  datasource:
+    url: localhost
+    database: service_user
+    port: 3306
+    username: root
+    password: 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    exchange: user_events
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 30
+    hostname: localhost
+
+app:
+  name: ServiceUser
+  env: local
+  key: base64:your-app-key-here
+  debug: true
+  url: http://localhost:8085
+
+logging:
+  level:
+    root: INFO
+    com.netflix.eureka: INFO
+    com.netflix.discovery: INFO
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+cache:
+  driver: file
+
+session:
+  driver: file
+  lifetime: 120
+
+queue:
+  connection: sync
+
+mail:
+  mailer: smtp
+  host: mailpit
+  port: 1025
+  username: null
+  password: null
+  encryption: null
+  from:
+    address: "hello@example.com"
+    name: "${app.name}"
