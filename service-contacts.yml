@@ -1,0 +1,28 @@
+spring:
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/contacts_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true"
+    username: gallagher
+    password: gallagher09
+    
+  jpa:
+    properties:
+      hibernate:
+        dialect: "org.hibernate.dialect.MySQLDialect"
+    hibernate:
+      ddl-auto: update
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: gallagher
+    password: gallagher09
+
+logging:
+  level:
+    org.springframework.amqp: DEBUG
+    org.springframework: DEBUG
+
+server:
+  port: 8104

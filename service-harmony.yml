@@ -1,0 +1,28 @@
+spring:
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/harmony_db
+    username: gallagher
+    password: gallagher09
+    driver-class-name: org.postgresql.Driver
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: gallagher
+    password: gallagher09
+
+logging:
+  level:
+    org.springframework.amqp: DEBUG
+    org.springframework: DEBUG
+
+server:
+  port: 8200
