@@ -29,5 +29,10 @@ logging:
     org.springframework.amqp: DEBUG
     org.springframework: DEBUG
 
+app:
+  file-storage:
+    base-url: http://localhost:8201
+
+
 server:
   port: 8201
