@@ -23,6 +23,15 @@ spring:
     port: 5672
     username: gallagher
     password: gallagher09
+  jackson:
+    default-property-inclusion: non_null
+    stream-write-constraints:
+      max-nesting-depth: 500
+    serialization:
+      indent_output: true
+    deserialization:
+      fail_on_unknown_properties: false
+
 
 logging:
   level:
@@ -32,6 +41,8 @@ logging:
 app:
   file-storage:
     base-url: http://localhost:8201
+
+
 
 
 server:
