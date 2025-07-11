@@ -36,10 +36,10 @@ app:
 
 # Database Configuration
 database:
-  host: mysql_db_service_user
+  host: kairos_db
   port: 3306
-  user: kairos
-  password: kairos
+  user: kairos_user
+  password: kairos_password
   name: service_user_db
 
 # RabbitMQ Configuration
@@ -52,6 +52,6 @@ rabbitmq:
 # Service Discovery
 service_discovery:
   eureka:
-    server: http://service-registry:8761/eureka/
+    server: http://service-register:8761/eureka/
   config:
     uri: http://service-config:8080
