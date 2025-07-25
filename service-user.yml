@@ -44,7 +44,7 @@ database:
 
 # RabbitMQ Configuration
 rabbitmq:
-  host: rabbitmq
+  host: kairos_rabbitmq
   port: 5672
   user: guest
   password: guest
